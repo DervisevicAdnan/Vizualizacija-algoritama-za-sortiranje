@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Vizualizacija algoritama za sortiranje/1.0.0": {
+        "runtime": {
+          "Vizualizacija algoritama za sortiranje.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Vizualizacija algoritama za sortiranje/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "10297b50-eae5-4da9-91b5-11a03c4e012c": {
+      "ProjectGuid": "10297b50-eae5-4da9-91b5-11a03c4e012c",
+      "DisplayName": "Vizualizacija algoritama za sortiranje",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
