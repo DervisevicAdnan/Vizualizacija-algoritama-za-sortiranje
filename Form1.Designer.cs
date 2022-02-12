@@ -29,11 +29,73 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.ButtonBubbleSort = new System.Windows.Forms.Button();
+            this.timerSwap = new System.Windows.Forms.Timer(this.components);
+            this.timerBubbleSort = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // ButtonBubbleSort
+            // 
+            this.ButtonBubbleSort.Location = new System.Drawing.Point(97, 61);
+            this.ButtonBubbleSort.Name = "ButtonBubbleSort";
+            this.ButtonBubbleSort.Size = new System.Drawing.Size(75, 23);
+            this.ButtonBubbleSort.TabIndex = 0;
+            this.ButtonBubbleSort.Text = "Bubble sort";
+            this.ButtonBubbleSort.UseVisualStyleBackColor = true;
+            this.ButtonBubbleSort.Click += new System.EventHandler(this.ButtonBubbleSort_Click);
+            // 
+            // timerSwap
+            // 
+            this.timerSwap.Tick += new System.EventHandler(this.timerSwap_Tick);
+            // 
+            // timerBubbleSort
+            // 
+            this.timerBubbleSort.Interval = 500;
+            this.timerBubbleSort.Tick += new System.EventHandler(this.timerBubbleSort_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(343, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(360, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "label2";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ButtonBubbleSort);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private Button ButtonBubbleSort;
+        private System.Windows.Forms.Timer timerSwap;
+        private System.Windows.Forms.Timer timerBubbleSort;
+        private Label label1;
+        private Label label2;
     }
 }
