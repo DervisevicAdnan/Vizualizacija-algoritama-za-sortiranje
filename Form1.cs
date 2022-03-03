@@ -5,6 +5,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
         Label[] array;
         int i1=0, i2=5, x1=100, x2=100+50*5;
         int ib, jb;
+        int indexMin = 0;
         System.Windows.Forms.Timer trenutniTimer;
         System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
 
@@ -26,6 +27,11 @@ namespace Vizualizacija_algoritama_za_sortiranje
             trenutniTimer = timerSelectionSort;
         }
 
+        private void ButtonInsertionSort_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timerSelectionSort_Tick(object sender, EventArgs e)
         {
             if (ib < array.Length - 1)
@@ -33,6 +39,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 label1.Text = "usao u ib= " + ib + ", jb= " + jb;
                 if (array[ib].BackColor != Color.Yellow)
                 {
+                    indexMin = ib;
                     array[ib].BackColor = Color.Yellow;
 
                     label1.Text = "spavanje";
@@ -58,12 +65,15 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
                     }
                     //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
-                    if (Convert.ToInt32(array[ib].Text) > Convert.ToInt32(array[jb].Text))
+                    if (Convert.ToInt32(array[indexMin].Text) > Convert.ToInt32(array[jb].Text))
                     {
-                        array[ib].BackColor = Color.Green;
+                        array[indexMin].BackColor = Color.Blue;
+                        array[ib].BackColor = Color.Yellow;
+                        indexMin = jb;
+                        //array[ib].BackColor = Color.Green;
                         array[jb].BackColor = Color.Green;
 
-                        label1.Text = "iskljucen timer";
+                        /*label1.Text = "iskljucen timer";
                         i1 = jb;
                         i2 = ib;
                         x1 = array[jb].Left;
@@ -72,9 +82,9 @@ namespace Vizualizacija_algoritama_za_sortiranje
                         timerSwap.Start();
 
                         timerSelectionSort.Stop();
-                        return;
+                        return;*/
                     }
-                    array[jb].BackColor = Color.Blue;
+                    if (indexMin != jb) array[jb].BackColor = Color.Blue;
                     jb++;
 
                     //MessageBox.Show(jb.ToString());
@@ -83,8 +93,18 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 else
                 {
                     array[ib].BackColor = Color.Blue;
+                    i1 = indexMin;
+                    i2 = ib;
+                    x1 = array[indexMin].Left;
+                    x2 = array[ib].Left;
+
+                    timerSwap.Start();
+
+                    timerSelectionSort.Stop();
+
                     ib++;
                     jb = ib + 1;
+                    return;
                 }
 
             }

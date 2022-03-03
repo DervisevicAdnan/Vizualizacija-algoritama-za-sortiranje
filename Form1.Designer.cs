@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonSelectionSort = new System.Windows.Forms.Button();
             this.timerSelectionSort = new System.Windows.Forms.Timer(this.components);
+            this.ButtonInsertionSort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonBubbleSort
@@ -71,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(456, 61);
+            this.label2.Location = new System.Drawing.Point(614, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 2;
@@ -92,11 +93,22 @@
             this.timerSelectionSort.Interval = 500;
             this.timerSelectionSort.Tick += new System.EventHandler(this.timerSelectionSort_Tick);
             // 
+            // ButtonInsertionSort
+            // 
+            this.ButtonInsertionSort.Location = new System.Drawing.Point(337, 61);
+            this.ButtonInsertionSort.Name = "ButtonInsertionSort";
+            this.ButtonInsertionSort.Size = new System.Drawing.Size(101, 23);
+            this.ButtonInsertionSort.TabIndex = 4;
+            this.ButtonInsertionSort.Text = "Insertion Sort";
+            this.ButtonInsertionSort.UseVisualStyleBackColor = true;
+            this.ButtonInsertionSort.Click += new System.EventHandler(this.ButtonInsertionSort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ButtonInsertionSort);
             this.Controls.Add(this.ButtonSelectionSort);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -117,5 +129,6 @@
         private Label label2;
         private Button ButtonSelectionSort;
         private System.Windows.Forms.Timer timerSelectionSort;
+        private Button ButtonInsertionSort;
     }
 }
