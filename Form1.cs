@@ -29,7 +29,78 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
         private void ButtonInsertionSort_Click(object sender, EventArgs e)
         {
+            ib = 0;
+            jb = 1;
+            timerInsertionSort.Enabled = true;
+            trenutniTimer = timerInsertionSort;
+        }
 
+        private void timerBubbleSort_Tick(object sender, EventArgs e)
+        {
+            if (ib < array.Length - 1)
+            {
+                label1.Text = "usao u ib= " + ib + ", jb= " + jb;
+                /*if (array[ib].BackColor != Color.Yellow)
+                {
+                    array[ib].BackColor = Color.Yellow;
+
+                    label1.Text = "spavanje";
+                    label1.Text = "usao u ib= " + ib + ", jb= " + jb;
+                    //System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
+                    proba.Interval = 1000;
+                    proba.Start();
+                    return;
+                }*/
+
+                //MessageBox.Show("ja jedem govna");
+
+                if (jb < array.Length - 1 - ib)
+                {
+                    label1.Text = "usao u jb";
+                    label2.Text = jb.ToString();
+                    if (array[jb].BackColor != Color.YellowGreen)
+                    {
+                        array[jb].BackColor = Color.YellowGreen;
+                        array[jb + 1].BackColor = Color.YellowGreen;
+                        proba.Interval = 1000;
+                        proba.Start();
+                        return;
+
+                    }
+                    //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
+                    if (Convert.ToInt32(array[jb].Text) > Convert.ToInt32(array[jb + 1].Text))
+                    {
+                        array[jb].BackColor = Color.Green;
+                        array[jb + 1].BackColor = Color.Green;
+
+                        label1.Text = "iskljucen timer";
+                        i1 = jb + 1;
+                        i2 = jb;
+                        x1 = array[jb + 1].Left;
+                        x2 = array[jb].Left;
+                        jb++;
+
+                        timerSwap.Start();
+
+                        timerBubbleSort.Stop();
+                        return;
+                    }
+                    array[jb].BackColor = Color.Blue;
+                    array[jb + 1].BackColor = Color.Blue;
+                    jb++;
+
+                    //MessageBox.Show(jb.ToString());
+
+                }
+                else
+                {
+                    array[ib].BackColor = Color.Blue;
+                    ib++;
+                    jb = ib;
+                }
+
+            }
+            else timerBubbleSort.Stop();
         }
 
         private void timerSelectionSort_Tick(object sender, EventArgs e)
@@ -111,13 +182,9 @@ namespace Vizualizacija_algoritama_za_sortiranje
             else timerSelectionSort.Stop();
         }
 
-        private void proba_Tick(object sender, EventArgs e)
+        private void timerInsertionSort_Tick(object sender, EventArgs e)
         {
-            timerBubbleSort.Start();
-        }
-        private void timerBubbleSort_Tick(object sender, EventArgs e)
-        {
-            if (ib < array.Length - 1)
+            if (ib < array.Length)
             {
                 label1.Text = "usao u ib= " + ib + ", jb= " + jb;
                 /*if (array[ib].BackColor != Color.Yellow)
@@ -134,39 +201,50 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
                 //MessageBox.Show("ja jedem govna");
 
-                if (jb < array.Length-1-ib)
+                if (jb > 0 && jb < array.Length)
                 {
                     label1.Text = "usao u jb";
                     label2.Text = jb.ToString();
-                    if(array[jb].BackColor != Color.YellowGreen){
+                    if (array[jb].BackColor != Color.YellowGreen)
+                    {
                         array[jb].BackColor = Color.YellowGreen;
-                        array[jb + 1].BackColor = Color.YellowGreen;
-                        proba.Interval = 1000;
+                        array[jb - 1].BackColor = Color.YellowGreen;
+                        proba.Interval = 2000;
                         proba.Start();
+                        //timerInsertionSort.Stop();
+                        //MessageBox.Show("POKRENUTOOOOOO");
                         return;
 
                     }
                     //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
-                    if (Convert.ToInt32(array[jb].Text) > Convert.ToInt32(array[jb+1].Text))
+                    if (Convert.ToInt32(array[jb].Text) < Convert.ToInt32(array[jb - 1].Text))
                     {
                         array[jb].BackColor = Color.Green;
-                        array[jb+1].BackColor = Color.Green;
+                        array[jb - 1].BackColor = Color.Green;
 
                         label1.Text = "iskljucen timer";
-                        i1 = jb+1;
-                        i2 = jb;
-                        x1 = array[jb+1].Left;
-                        x2 = array[jb].Left;
-                        jb++;
+                        i1 = jb;
+                        i2 = jb - 1;
+                        x1 = array[jb].Left;
+                        x2 = array[jb - 1].Left;
+                        jb--;
 
                         timerSwap.Start();
 
-                        timerBubbleSort.Stop();
+                        timerInsertionSort.Stop();
                         return;
                     }
-                    array[jb].BackColor = Color.Blue;
-                    array[jb+1].BackColor = Color.Blue;
-                    jb++;
+                    else
+                    {
+                        array[jb].BackColor = Color.Blue;
+                        array[jb - 1].BackColor = Color.Blue;
+                        array[ib].BackColor = Color.Blue;
+                        ib++;
+                        jb = ib + 1;
+                        return;
+                    }
+                    //array[jb].BackColor = Color.Blue;
+                    //array[jb - 1].BackColor = Color.Blue;
 
                     //MessageBox.Show(jb.ToString());
 
@@ -175,12 +253,20 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 {
                     array[ib].BackColor = Color.Blue;
                     ib++;
-                    jb = ib;
+                    jb = ib + 1;
                 }
 
             }
-            else timerBubbleSort.Stop();
+            else timerInsertionSort.Stop();
         }
+
+        private void proba_Tick(object sender, EventArgs e)
+        {
+            trenutniTimer.Start();
+            MessageBox.Show("PROBAAAAA");
+            proba.Stop();
+        }
+        
 
         public Form1()
         {

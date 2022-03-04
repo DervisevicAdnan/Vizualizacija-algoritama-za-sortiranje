@@ -37,6 +37,7 @@
             this.ButtonSelectionSort = new System.Windows.Forms.Button();
             this.timerSelectionSort = new System.Windows.Forms.Timer(this.components);
             this.ButtonInsertionSort = new System.Windows.Forms.Button();
+            this.timerInsertionSort = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // ButtonBubbleSort
@@ -103,6 +104,11 @@
             this.ButtonInsertionSort.UseVisualStyleBackColor = true;
             this.ButtonInsertionSort.Click += new System.EventHandler(this.ButtonInsertionSort_Click);
             // 
+            // timerInsertionSort
+            // 
+            this.timerInsertionSort.Interval = 500;
+            this.timerInsertionSort.Tick += new System.EventHandler(this.timerInsertionSort_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -130,5 +136,6 @@
         private Button ButtonSelectionSort;
         private System.Windows.Forms.Timer timerSelectionSort;
         private Button ButtonInsertionSort;
+        private System.Windows.Forms.Timer timerInsertionSort;
     }
 }
