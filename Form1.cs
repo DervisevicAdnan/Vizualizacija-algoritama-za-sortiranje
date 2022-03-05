@@ -5,7 +5,8 @@ namespace Vizualizacija_algoritama_za_sortiranje
         Label[] array;
         int i1=0, i2=5, x1=100, x2=100+50*5;
         int ib, jb;
-        int indexMin = 0;
+        int trenutni;
+        int indexMin = 0, smjer = 0;
         System.Windows.Forms.Timer trenutniTimer;
         System.Windows.Forms.Timer proba;
 
@@ -62,8 +63,6 @@ namespace Vizualizacija_algoritama_za_sortiranje
                     {
                         array[jb].BackColor = Color.YellowGreen;
                         array[jb + 1].BackColor = Color.YellowGreen;
-                        proba.Interval = 1000;
-                        proba.Start();
                         return;
 
                     }
@@ -116,8 +115,6 @@ namespace Vizualizacija_algoritama_za_sortiranje
                     label1.Text = "spavanje";
                     label1.Text = "usao u ib= " + ib + ", jb= " + jb;
                     //System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
-                    proba.Interval = 1000;
-                    proba.Start();
                     return;
                 }
 
@@ -130,8 +127,6 @@ namespace Vizualizacija_algoritama_za_sortiranje
                     if (array[jb].BackColor != Color.YellowGreen)
                     {
                         array[jb].BackColor = Color.YellowGreen;
-                        proba.Interval = 1000;
-                        proba.Start();
                         return;
 
                     }
@@ -184,22 +179,9 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
         private void timerInsertionSort_Tick(object sender, EventArgs e)
         {
-            if (ib < array.Length)
+            if (ib < array.Length-1)
             {
                 label1.Text = "usao u ib= " + ib + ", jb= " + jb;
-                /*if (array[ib].BackColor != Color.Yellow)
-                {
-                    array[ib].BackColor = Color.Yellow;
-
-                    label1.Text = "spavanje";
-                    label1.Text = "usao u ib= " + ib + ", jb= " + jb;
-                    //System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
-                    proba.Interval = 1000;
-                    proba.Start();
-                    return;
-                }*/
-
-                //MessageBox.Show("ja jedem govna");
 
                 if (jb > 0 && jb < array.Length)
                 {
@@ -207,11 +189,13 @@ namespace Vizualizacija_algoritama_za_sortiranje
                     label2.Text = jb.ToString();
                     if (array[jb].BackColor != Color.YellowGreen)
                     {
+                        trenutni = jb;
                         array[jb].BackColor = Color.YellowGreen;
                         array[jb - 1].BackColor = Color.YellowGreen;
-                        proba.Interval = 2000;
+                        smjer = 0;
+                        proba.Interval = 100;
                         proba.Start();
-                        //timerInsertionSort.Stop();
+                        timerInsertionSort.Stop();
                         //MessageBox.Show("POKRENUTOOOOOO");
                         return;
 
@@ -236,6 +220,11 @@ namespace Vizualizacija_algoritama_za_sortiranje
                     }
                     else
                     {
+                        trenutni = jb;
+                        smjer = 1;
+                        proba.Start();
+                        timerInsertionSort.Stop();
+
                         array[jb].BackColor = Color.Blue;
                         array[jb - 1].BackColor = Color.Blue;
                         array[ib].BackColor = Color.Blue;
@@ -251,9 +240,15 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 }
                 else
                 {
+                    trenutni = jb;
+                    smjer = 1;
+                    proba.Start();
+                    timerInsertionSort.Stop();
+
                     array[ib].BackColor = Color.Blue;
                     ib++;
                     jb = ib + 1;
+                    return;
                 }
 
             }
@@ -262,9 +257,22 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
         private void proba_Tick(object sender, EventArgs e)
         {
-            trenutniTimer.Start();
-            MessageBox.Show("PROBAAAAA");
-            proba.Stop();
+            if (smjer == 0 && array[trenutni].Top<300)
+            {
+                array[trenutni].Top += 5;
+            }else if(smjer == 1 && array[trenutni].Top > 200)
+            {
+                array[trenutni].Top -= 5;
+            }
+            else
+            {
+                
+                trenutniTimer.Start();
+                proba.Stop();
+                //MessageBox.Show(array[trenutni].Top.ToString());
+            }
+            
+            //MessageBox.Show("PROBAAAAA");
         }
         
 
