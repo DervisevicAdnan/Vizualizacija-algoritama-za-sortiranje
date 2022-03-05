@@ -7,7 +7,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
         int ib, jb;
         int indexMin = 0;
         System.Windows.Forms.Timer trenutniTimer;
-        System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
+        System.Windows.Forms.Timer proba;
 
 
         private void ButtonBubbleSort_Click(object sender, EventArgs e)
@@ -289,6 +289,8 @@ namespace Vizualizacija_algoritama_za_sortiranje
             }
             //timerSwap.Start();
             Controls.AddRange(array);
+            this.proba = new System.Windows.Forms.Timer(this.components);
+            this.proba.Tick += new System.EventHandler(this.proba_Tick);
         }
 
         private void timerSwap_Tick(object sender, EventArgs e)
