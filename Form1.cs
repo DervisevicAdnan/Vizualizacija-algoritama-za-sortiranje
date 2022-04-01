@@ -6,6 +6,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
         int i1=0, i2=5, x1=100, x2=100+50*5;
         int ib, jb;
         int trenutni;
+        int smjerOtvaranjaPanela = 1;
         int indexMin = 0, smjer = 0;
         System.Windows.Forms.Timer trenutniTimer;
         System.Windows.Forms.Timer proba;
@@ -34,6 +35,10 @@ namespace Vizualizacija_algoritama_za_sortiranje
             jb = 1;
             timerInsertionSort.Enabled = true;
             trenutniTimer = timerInsertionSort;
+        }
+        private void ButtonShellSort_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void timerBubbleSort_Tick(object sender, EventArgs e)
@@ -100,6 +105,23 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
             }
             else timerBubbleSort.Stop();
+        }
+
+        private void buttonUnesiNiz_Click(object sender, EventArgs e)
+        {
+            smjerOtvaranjaPanela *= -1;
+            timerUnosNiza.Start();
+
+        }
+
+        private void timerUnosNiza_Tick(object sender, EventArgs e)
+        {
+            panelUnosNiza.Height += (smjerOtvaranjaPanela * 5);
+            panelUnosNiza.Top += (-1 * smjerOtvaranjaPanela * 5);
+            if (panelUnosNiza.Height == 100 || panelUnosNiza.Height == 0)  
+            {
+                timerUnosNiza.Stop();
+            }
         }
 
         private void timerSelectionSort_Tick(object sender, EventArgs e)

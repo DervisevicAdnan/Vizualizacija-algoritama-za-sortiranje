@@ -38,6 +38,13 @@
             this.timerSelectionSort = new System.Windows.Forms.Timer(this.components);
             this.ButtonInsertionSort = new System.Windows.Forms.Button();
             this.timerInsertionSort = new System.Windows.Forms.Timer(this.components);
+            this.ButtonShellSort = new System.Windows.Forms.Button();
+            this.buttonUnesiNiz = new System.Windows.Forms.Button();
+            this.panelUnosNiza = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.timerUnosNiza = new System.Windows.Forms.Timer(this.components);
+            this.panelUnosNiza.SuspendLayout();
             this.SuspendLayout();
             // 
             // ButtonBubbleSort
@@ -109,11 +116,64 @@
             this.timerInsertionSort.Interval = 500;
             this.timerInsertionSort.Tick += new System.EventHandler(this.timerInsertionSort_Tick);
             // 
+            // ButtonShellSort
+            // 
+            this.ButtonShellSort.Location = new System.Drawing.Point(459, 61);
+            this.ButtonShellSort.Name = "ButtonShellSort";
+            this.ButtonShellSort.Size = new System.Drawing.Size(75, 23);
+            this.ButtonShellSort.TabIndex = 5;
+            this.ButtonShellSort.Text = "Shell sort";
+            this.ButtonShellSort.UseVisualStyleBackColor = true;
+            this.ButtonShellSort.Click += new System.EventHandler(this.ButtonShellSort_Click);
+            // 
+            // buttonUnesiNiz
+            // 
+            this.buttonUnesiNiz.Location = new System.Drawing.Point(386, 21);
+            this.buttonUnesiNiz.Name = "buttonUnesiNiz";
+            this.buttonUnesiNiz.Size = new System.Drawing.Size(75, 23);
+            this.buttonUnesiNiz.TabIndex = 6;
+            this.buttonUnesiNiz.Text = "Unesi niz";
+            this.buttonUnesiNiz.UseVisualStyleBackColor = true;
+            this.buttonUnesiNiz.Click += new System.EventHandler(this.buttonUnesiNiz_Click);
+            // 
+            // panelUnosNiza
+            // 
+            this.panelUnosNiza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUnosNiza.Controls.Add(this.button1);
+            this.panelUnosNiza.Controls.Add(this.textBox1);
+            this.panelUnosNiza.Location = new System.Drawing.Point(248, 341);
+            this.panelUnosNiza.Name = "panelUnosNiza";
+            this.panelUnosNiza.Size = new System.Drawing.Size(304, 100);
+            this.panelUnosNiza.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(207, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(17, 35);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(149, 23);
+            this.textBox1.TabIndex = 0;
+            // 
+            // timerUnosNiza
+            // 
+            this.timerUnosNiza.Tick += new System.EventHandler(this.timerUnosNiza_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelUnosNiza);
+            this.Controls.Add(this.buttonUnesiNiz);
+            this.Controls.Add(this.ButtonShellSort);
             this.Controls.Add(this.ButtonInsertionSort);
             this.Controls.Add(this.ButtonSelectionSort);
             this.Controls.Add(this.label2);
@@ -121,6 +181,8 @@
             this.Controls.Add(this.ButtonBubbleSort);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.panelUnosNiza.ResumeLayout(false);
+            this.panelUnosNiza.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +199,11 @@
         private System.Windows.Forms.Timer timerSelectionSort;
         private Button ButtonInsertionSort;
         private System.Windows.Forms.Timer timerInsertionSort;
+        private Button ButtonShellSort;
+        private Button buttonUnesiNiz;
+        private Panel panelUnosNiza;
+        private Button button1;
+        private TextBox textBox1;
+        private System.Windows.Forms.Timer timerUnosNiza;
     }
 }
