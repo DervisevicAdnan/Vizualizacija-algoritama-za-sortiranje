@@ -3,6 +3,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
     public partial class Form1 : Form
     {
         Label[] array;
+        int[] niz = { 4, 2, 20, 4, 10, 6 };
         int i1=0, i2=5, x1=100, x2=100+50*5;
         int ib, jb;
         int trenutni;
@@ -100,7 +101,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 {
                     array[ib].BackColor = Color.Blue;
                     ib++;
-                    jb = ib;
+                    jb = 0;
                 }
 
             }
@@ -122,6 +123,33 @@ namespace Vizualizacija_algoritama_za_sortiranje
             {
                 timerUnosNiza.Stop();
             }
+        }
+
+        private void buttonUnesiNiz2_Click(object sender, EventArgs e)
+        {
+            string n = textBoxUnosNiza.Text;
+            int duzinaNiza = 0;
+            for(int i=0;i<n.Length;i++) if(n[i] == ',') duzinaNiza++;
+            string tmp = "";
+            int[] tmpNiz=new int[duzinaNiza+1];
+            duzinaNiza=0;
+            for (int i = 0; i < n.Length; i++)
+            {
+                if(n[i] >='0' && n[i] <='9')
+                {
+                    tmp += n[i];
+                }else if (n[i] == ',')
+                {
+                    tmpNiz[duzinaNiza]=Convert.ToInt32(tmp);
+                    duzinaNiza++;
+                    tmp = "";
+                }
+            }
+            tmpNiz[duzinaNiza] = Convert.ToInt32(tmp);
+            
+            niz = tmpNiz;
+            
+            kreirajNiz();
         }
 
         private void timerSelectionSort_Tick(object sender, EventArgs e)
@@ -301,26 +329,36 @@ namespace Vizualizacija_algoritama_za_sortiranje
         public Form1()
         {
             InitializeComponent();
-            int[] aa = { 4, 2, 20, 4, 10, 6 };
-            //niz a=new niz(aa,this);
-            array = new Label[aa.Length];
-            for (int i = 0; i < aa.Length; i++)
+            kreirajNiz();
+
+            //niz a=new niz(niz,this);
+            
+            this.proba = new System.Windows.Forms.Timer(this.components);
+            this.proba.Tick += new System.EventHandler(this.proba_Tick);
+        }
+
+        private void kreirajNiz()
+        {
+            if (!(array is null))
+            {
+                for(int i=0;i<array.Length;i++)
+                Controls.Remove(array[i]);
+            }
+            array = new Label[niz.Length];
+            for (int i = 0; i < niz.Length; i++)
             {
                 array[i] = new Label();
                 //array[i].AutoSize = true;
-                array[i].Text = aa[i].ToString();
+                array[i].Text = niz[i].ToString();
                 array[i].Location = new Point(100 + 80 * i, 200);
                 array[i].ForeColor = Color.White;
                 array[i].BackColor = Color.Blue;
-                array[i].Size = new Size(60,60);
+                array[i].Size = new Size(60, 60);
                 array[i].TextAlign = ContentAlignment.MiddleCenter;
                 array[i].Font = new Font("Arial", 20, FontStyle.Bold);
 
             }
-            //timerSwap.Start();
             Controls.AddRange(array);
-            this.proba = new System.Windows.Forms.Timer(this.components);
-            this.proba.Tick += new System.EventHandler(this.proba_Tick);
         }
 
         private void timerSwap_Tick(object sender, EventArgs e)

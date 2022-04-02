@@ -41,8 +41,8 @@
             this.ButtonShellSort = new System.Windows.Forms.Button();
             this.buttonUnesiNiz = new System.Windows.Forms.Button();
             this.panelUnosNiza = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonUnesiNiz2 = new System.Windows.Forms.Button();
+            this.textBoxUnosNiza = new System.Windows.Forms.TextBox();
             this.timerUnosNiza = new System.Windows.Forms.Timer(this.components);
             this.panelUnosNiza.SuspendLayout();
             this.SuspendLayout();
@@ -139,28 +139,29 @@
             // panelUnosNiza
             // 
             this.panelUnosNiza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelUnosNiza.Controls.Add(this.button1);
-            this.panelUnosNiza.Controls.Add(this.textBox1);
+            this.panelUnosNiza.Controls.Add(this.buttonUnesiNiz2);
+            this.panelUnosNiza.Controls.Add(this.textBoxUnosNiza);
             this.panelUnosNiza.Location = new System.Drawing.Point(248, 341);
             this.panelUnosNiza.Name = "panelUnosNiza";
             this.panelUnosNiza.Size = new System.Drawing.Size(304, 100);
             this.panelUnosNiza.TabIndex = 7;
             // 
-            // button1
+            // buttonUnesiNiz2
             // 
-            this.button1.Location = new System.Drawing.Point(207, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonUnesiNiz2.Location = new System.Drawing.Point(207, 14);
+            this.buttonUnesiNiz2.Name = "buttonUnesiNiz2";
+            this.buttonUnesiNiz2.Size = new System.Drawing.Size(75, 23);
+            this.buttonUnesiNiz2.TabIndex = 1;
+            this.buttonUnesiNiz2.Text = "Unesi";
+            this.buttonUnesiNiz2.UseVisualStyleBackColor = true;
+            this.buttonUnesiNiz2.Click += new System.EventHandler(this.buttonUnesiNiz2_Click);
             // 
-            // textBox1
+            // textBoxUnosNiza
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 23);
-            this.textBox1.TabIndex = 0;
+            this.textBoxUnosNiza.Location = new System.Drawing.Point(17, 35);
+            this.textBoxUnosNiza.Name = "textBoxUnosNiza";
+            this.textBoxUnosNiza.Size = new System.Drawing.Size(149, 23);
+            this.textBoxUnosNiza.TabIndex = 0;
             // 
             // timerUnosNiza
             // 
@@ -202,8 +203,8 @@
         private Button ButtonShellSort;
         private Button buttonUnesiNiz;
         private Panel panelUnosNiza;
-        private Button button1;
-        private TextBox textBox1;
+        private Button buttonUnesiNiz2;
+        private TextBox textBoxUnosNiza;
         private System.Windows.Forms.Timer timerUnosNiza;
     }
 }
