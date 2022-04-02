@@ -41,9 +41,10 @@
             this.ButtonShellSort = new System.Windows.Forms.Button();
             this.buttonUnesiNiz = new System.Windows.Forms.Button();
             this.panelUnosNiza = new System.Windows.Forms.Panel();
-            this.buttonUnesiNiz2 = new System.Windows.Forms.Button();
+            this.buttonKreirajNiz = new System.Windows.Forms.Button();
             this.textBoxUnosNiza = new System.Windows.Forms.TextBox();
             this.timerUnosNiza = new System.Windows.Forms.Timer(this.components);
+            this.buttonKreirajNasumicanNiz = new System.Windows.Forms.Button();
             this.panelUnosNiza.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,33 +140,44 @@
             // panelUnosNiza
             // 
             this.panelUnosNiza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelUnosNiza.Controls.Add(this.buttonUnesiNiz2);
+            this.panelUnosNiza.Controls.Add(this.buttonKreirajNasumicanNiz);
+            this.panelUnosNiza.Controls.Add(this.buttonKreirajNiz);
             this.panelUnosNiza.Controls.Add(this.textBoxUnosNiza);
             this.panelUnosNiza.Location = new System.Drawing.Point(248, 341);
             this.panelUnosNiza.Name = "panelUnosNiza";
-            this.panelUnosNiza.Size = new System.Drawing.Size(304, 100);
+            this.panelUnosNiza.Size = new System.Drawing.Size(328, 100);
             this.panelUnosNiza.TabIndex = 7;
             // 
-            // buttonUnesiNiz2
+            // buttonKreirajNiz
             // 
-            this.buttonUnesiNiz2.Location = new System.Drawing.Point(207, 14);
-            this.buttonUnesiNiz2.Name = "buttonUnesiNiz2";
-            this.buttonUnesiNiz2.Size = new System.Drawing.Size(75, 23);
-            this.buttonUnesiNiz2.TabIndex = 1;
-            this.buttonUnesiNiz2.Text = "Unesi";
-            this.buttonUnesiNiz2.UseVisualStyleBackColor = true;
-            this.buttonUnesiNiz2.Click += new System.EventHandler(this.buttonUnesiNiz2_Click);
+            this.buttonKreirajNiz.Location = new System.Drawing.Point(210, 22);
+            this.buttonKreirajNiz.Name = "buttonKreirajNiz";
+            this.buttonKreirajNiz.Size = new System.Drawing.Size(75, 23);
+            this.buttonKreirajNiz.TabIndex = 1;
+            this.buttonKreirajNiz.Text = "Kreiraj niz";
+            this.buttonKreirajNiz.UseVisualStyleBackColor = true;
+            this.buttonKreirajNiz.Click += new System.EventHandler(this.buttonUnesiNiz2_Click);
             // 
             // textBoxUnosNiza
             // 
-            this.textBoxUnosNiza.Location = new System.Drawing.Point(17, 35);
+            this.textBoxUnosNiza.Location = new System.Drawing.Point(25, 22);
             this.textBoxUnosNiza.Name = "textBoxUnosNiza";
-            this.textBoxUnosNiza.Size = new System.Drawing.Size(149, 23);
+            this.textBoxUnosNiza.Size = new System.Drawing.Size(164, 23);
             this.textBoxUnosNiza.TabIndex = 0;
             // 
             // timerUnosNiza
             // 
             this.timerUnosNiza.Tick += new System.EventHandler(this.timerUnosNiza_Tick);
+            // 
+            // buttonKreirajNasumicanNiz
+            // 
+            this.buttonKreirajNasumicanNiz.Location = new System.Drawing.Point(106, 60);
+            this.buttonKreirajNasumicanNiz.Name = "buttonKreirajNasumicanNiz";
+            this.buttonKreirajNasumicanNiz.Size = new System.Drawing.Size(127, 23);
+            this.buttonKreirajNasumicanNiz.TabIndex = 2;
+            this.buttonKreirajNasumicanNiz.Text = "Kreiraj nasumičan niz";
+            this.buttonKreirajNasumicanNiz.UseVisualStyleBackColor = true;
+            this.buttonKreirajNasumicanNiz.Click += new System.EventHandler(this.buttonKreirajNasumicanNiz_Click);
             // 
             // Form1
             // 
@@ -203,8 +215,9 @@
         private Button ButtonShellSort;
         private Button buttonUnesiNiz;
         private Panel panelUnosNiza;
-        private Button buttonUnesiNiz2;
+        private Button buttonKreirajNiz;
         private TextBox textBoxUnosNiza;
         private System.Windows.Forms.Timer timerUnosNiza;
+        private Button buttonKreirajNasumicanNiz;
     }
 }

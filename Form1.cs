@@ -150,6 +150,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
             niz = tmpNiz;
             
             kreirajNiz();
+            buttonUnesiNiz.PerformClick();
         }
 
         private void timerSelectionSort_Tick(object sender, EventArgs e)
@@ -225,6 +226,18 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
             }
             else timerSelectionSort.Stop();
+        }
+
+        private void buttonKreirajNasumicanNiz_Click(object sender, EventArgs e)
+        {
+            Random rnd=new Random();
+            string nasumicniNiz = "";
+            for(int i = rnd.Next(2,7); i >= 0; i--)
+            {
+                nasumicniNiz += rnd.Next(250) + ",";
+            }
+            nasumicniNiz += rnd.Next(250);
+            textBoxUnosNiza.Text = nasumicniNiz;
         }
 
         private void timerInsertionSort_Tick(object sender, EventArgs e)
