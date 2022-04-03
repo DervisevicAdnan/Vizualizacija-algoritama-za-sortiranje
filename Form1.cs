@@ -6,6 +6,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
         int[] niz = { 4, 2, 20, 4, 10, 6 };
         int i1=0, i2=5, x1=100, x2=100+50*5;
         int ib, jb;
+        int g;
         int trenutni;
         int smjerOtvaranjaPanela = 1;
         int indexMin = 0, smjer = 0;
@@ -39,7 +40,11 @@ namespace Vizualizacija_algoritama_za_sortiranje
         }
         private void ButtonShellSort_Click(object sender, EventArgs e)
         {
-
+            g = array.Length / 2;
+            ib = g;
+            jb = ib;
+            timerShellSort.Enabled = true;
+            trenutniTimer = timerShellSort;
         }
 
         private void timerBubbleSort_Tick(object sender, EventArgs e)
@@ -238,6 +243,93 @@ namespace Vizualizacija_algoritama_za_sortiranje
             }
             nasumicniNiz += rnd.Next(250);
             textBoxUnosNiza.Text = nasumicniNiz;
+        }
+
+        private void timerShellSort_Tick(object sender, EventArgs e)
+        {
+            if (g > 0)
+            {
+                if (ib < array.Length)
+                {
+                    label1.Text = "usao u ib= " + ib + ", jb= " + jb;
+
+                    if (jb >= g && jb < array.Length)
+                    {
+                        label1.Text = "usao u jb";
+                        label2.Text = jb.ToString();
+                        if (array[jb].BackColor != Color.YellowGreen)
+                        {
+                            trenutni = jb;
+                            array[jb].BackColor = Color.YellowGreen;
+                            array[jb - g].BackColor = Color.YellowGreen;
+                            smjer = 0;
+                            proba.Interval = 100;
+                            proba.Start();
+                            timerShellSort.Stop();
+                            //MessageBox.Show("POKRENUTOOOOOO");
+                            return;
+
+                        }
+                        //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
+                        if (Convert.ToInt32(array[jb].Text) < Convert.ToInt32(array[jb - g].Text))
+                        {
+                            array[jb].BackColor = Color.Green;
+                            array[jb - g].BackColor = Color.Green;
+
+                            label1.Text = "iskljucen timer";
+                            i1 = jb;
+                            i2 = jb - g;
+                            x1 = array[jb].Left;
+                            x2 = array[jb - g].Left;
+                            jb-=g;
+
+                            timerSwap.Start();
+
+                            timerShellSort.Stop();
+                            return;
+                        }
+                        else
+                        {
+                            trenutni = jb;
+                            smjer = 1;
+                            proba.Start();
+                            timerShellSort.Stop();
+
+                            array[jb].BackColor = Color.Blue;
+                            array[jb - g].BackColor = Color.Blue;
+                            array[ib].BackColor = Color.Blue;
+                            ib++;
+                            jb = ib;
+                            return;
+                        }
+                        //array[jb].BackColor = Color.Blue;
+                        //array[jb - 1].BackColor = Color.Blue;
+
+                        //MessageBox.Show(jb.ToString());
+
+                    }
+                    else
+                    {
+                        trenutni = jb;
+                        smjer = 1;
+                        proba.Start();
+                        timerShellSort.Stop();
+
+                        array[ib].BackColor = Color.Blue;
+                        ib++;
+                        jb = ib;
+                        return;
+                    }
+
+                }
+                else
+                {
+                    g /= 2;
+                    ib = g;
+                    jb = ib;
+                }
+            }
+            else timerShellSort.Stop();
         }
 
         private void timerInsertionSort_Tick(object sender, EventArgs e)
