@@ -10,15 +10,25 @@ namespace Vizualizacija_algoritama_za_sortiranje
         int trenutni;
         int smjerOtvaranjaPanela = 1;
         int indexMin = 0, smjer = 0;
+        bool pauzirano = true;
         System.Windows.Forms.Timer trenutniTimer;
         System.Windows.Forms.Timer proba;
+        Button ButtonTrenutni;
 
 
         private void ButtonBubbleSort_Click(object sender, EventArgs e)
         {
             ib = 0;
             jb = 0;
-            timerBubbleSort.Enabled = true;
+
+            pauzirano = true;
+            trenutniTimer.Stop();
+            buttonKontrola.Text = "Pokreni";
+
+            //timerBubbleSort.Enabled = true;
+            ButtonTrenutni.Enabled = true;
+            ButtonTrenutni = ButtonBubbleSort;
+            ButtonTrenutni.Enabled = false;
             trenutniTimer = timerBubbleSort;
             //MessageBox.Show("ukljucen timer");
         }
@@ -27,7 +37,15 @@ namespace Vizualizacija_algoritama_za_sortiranje
         {
             ib = 0;
             jb = 1;
-            timerSelectionSort.Enabled = true;
+
+            pauzirano = true;
+            trenutniTimer.Stop();
+            buttonKontrola.Text = "Pokreni";
+
+            //timerSelectionSort.Enabled = true;
+            ButtonTrenutni.Enabled = true;
+            ButtonTrenutni = ButtonSelectionSort;
+            ButtonTrenutni.Enabled = false;
             trenutniTimer = timerSelectionSort;
         }
 
@@ -35,7 +53,15 @@ namespace Vizualizacija_algoritama_za_sortiranje
         {
             ib = 0;
             jb = 1;
-            timerInsertionSort.Enabled = true;
+
+            pauzirano = true;
+            trenutniTimer.Stop();
+            buttonKontrola.Text = "Pokreni";
+
+            //timerInsertionSort.Enabled = true;
+            ButtonTrenutni.Enabled = true;
+            ButtonTrenutni = ButtonInsertionSort;
+            ButtonTrenutni.Enabled = false;
             trenutniTimer = timerInsertionSort;
         }
         private void ButtonShellSort_Click(object sender, EventArgs e)
@@ -43,7 +69,15 @@ namespace Vizualizacija_algoritama_za_sortiranje
             g = array.Length / 2;
             ib = g;
             jb = ib;
-            timerShellSort.Enabled = true;
+
+            pauzirano = true;
+            trenutniTimer.Stop();
+            buttonKontrola.Text = "Pokreni";
+
+            //timerShellSort.Enabled = true;
+            ButtonTrenutni.Enabled = true;
+            ButtonTrenutni = ButtonShellSort;
+            ButtonTrenutni.Enabled = false;
             trenutniTimer = timerShellSort;
         }
 
@@ -110,7 +144,13 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 }
 
             }
-            else timerBubbleSort.Stop();
+            else
+            {
+                timerBubbleSort.Stop();
+                ButtonTrenutni.Enabled = true;
+                ButtonTrenutni.PerformClick();
+
+            }
         }
 
         private void buttonUnesiNiz_Click(object sender, EventArgs e)
@@ -230,7 +270,12 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 }
 
             }
-            else timerSelectionSort.Stop();
+            else
+            {
+                timerSelectionSort.Stop();
+                ButtonTrenutni.Enabled = true;
+                ButtonTrenutni.PerformClick();
+            }
         }
 
         private void buttonKreirajNasumicanNiz_Click(object sender, EventArgs e)
@@ -263,7 +308,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
                             array[jb].BackColor = Color.YellowGreen;
                             array[jb - g].BackColor = Color.YellowGreen;
                             smjer = 0;
-                            proba.Interval = 100;
+                            proba.Interval = 100 / trackBar1.Value;
                             proba.Start();
                             timerShellSort.Stop();
                             //MessageBox.Show("POKRENUTOOOOOO");
@@ -281,7 +326,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
                             i2 = jb - g;
                             x1 = array[jb].Left;
                             x2 = array[jb - g].Left;
-                            jb-=g;
+                            jb -= g;
 
                             timerSwap.Start();
 
@@ -329,12 +374,45 @@ namespace Vizualizacija_algoritama_za_sortiranje
                     jb = ib;
                 }
             }
-            else timerShellSort.Stop();
+            else
+            {
+                timerShellSort.Stop();
+                ButtonTrenutni.Enabled = true;
+                ButtonTrenutni.PerformClick();
+            }
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            int k = trackBar1.Value;
+            timerBubbleSort.Interval = 1000 / k;
+            timerInsertionSort.Interval = 1000 / k;
+            timerSelectionSort.Interval = 1000 / k;
+            timerShellSort.Interval = 1000 / k;
+            timerSwap.Interval = 150 / k;
+            proba.Interval = 100 / k;
+        }
+
+        private void buttonKontrola_Click(object sender, EventArgs e)
+        {
+            if (pauzirano)
+            {
+                pauzirano = false;
+                trenutniTimer.Start();
+                buttonKontrola.Text = "Pauziraj";
+            }
+            else
+            {
+                pauzirano = true;
+                trenutniTimer.Stop();
+                buttonKontrola.Text = "Pokreni";
+            }
+
         }
 
         private void timerInsertionSort_Tick(object sender, EventArgs e)
         {
-            if (ib < array.Length-1)
+            if (ib < array.Length - 1)
             {
                 label1.Text = "usao u ib= " + ib + ", jb= " + jb;
 
@@ -348,7 +426,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
                         array[jb].BackColor = Color.YellowGreen;
                         array[jb - 1].BackColor = Color.YellowGreen;
                         smjer = 0;
-                        proba.Interval = 100;
+                        proba.Interval = 100 / trackBar1.Value;
                         proba.Start();
                         timerInsertionSort.Stop();
                         //MessageBox.Show("POKRENUTOOOOOO");
@@ -407,7 +485,12 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 }
 
             }
-            else timerInsertionSort.Stop();
+            else
+            {
+                timerInsertionSort.Stop();
+                ButtonTrenutni.Enabled = true;
+                ButtonTrenutni.PerformClick();
+            }
         }
 
         private void proba_Tick(object sender, EventArgs e)
@@ -440,6 +523,9 @@ namespace Vizualizacija_algoritama_za_sortiranje
             
             this.proba = new System.Windows.Forms.Timer(this.components);
             this.proba.Tick += new System.EventHandler(this.proba_Tick);
+
+            trenutniTimer = timerBubbleSort;
+            ButtonTrenutni = ButtonBubbleSort;
         }
 
         private void kreirajNiz()
@@ -481,7 +567,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 array[i2] = tmp;
                 array[i1].BackColor = Color.Blue;
                 array[i2].BackColor = Color.Blue;
-                trenutniTimer.Start();
+                if(!pauzirano) trenutniTimer.Start();
                 
                 timerSwap.Stop();
                 

@@ -41,16 +41,20 @@
             this.ButtonShellSort = new System.Windows.Forms.Button();
             this.buttonUnesiNiz = new System.Windows.Forms.Button();
             this.panelUnosNiza = new System.Windows.Forms.Panel();
+            this.buttonKontrola = new System.Windows.Forms.Button();
             this.buttonKreirajNasumicanNiz = new System.Windows.Forms.Button();
             this.buttonKreirajNiz = new System.Windows.Forms.Button();
             this.textBoxUnosNiza = new System.Windows.Forms.TextBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.timerUnosNiza = new System.Windows.Forms.Timer(this.components);
             this.timerShellSort = new System.Windows.Forms.Timer(this.components);
             this.panelUnosNiza.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonBubbleSort
             // 
+            this.ButtonBubbleSort.Enabled = false;
             this.ButtonBubbleSort.Location = new System.Drawing.Point(97, 61);
             this.ButtonBubbleSort.Name = "ButtonBubbleSort";
             this.ButtonBubbleSort.Size = new System.Drawing.Size(102, 23);
@@ -61,6 +65,7 @@
             // 
             // timerSwap
             // 
+            this.timerSwap.Interval = 150;
             this.timerSwap.Tick += new System.EventHandler(this.timerSwap_Tick);
             // 
             // timerBubbleSort
@@ -141,17 +146,29 @@
             // panelUnosNiza
             // 
             this.panelUnosNiza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUnosNiza.Controls.Add(this.buttonKontrola);
             this.panelUnosNiza.Controls.Add(this.buttonKreirajNasumicanNiz);
             this.panelUnosNiza.Controls.Add(this.buttonKreirajNiz);
             this.panelUnosNiza.Controls.Add(this.textBoxUnosNiza);
-            this.panelUnosNiza.Location = new System.Drawing.Point(248, 341);
+            this.panelUnosNiza.Controls.Add(this.trackBar1);
+            this.panelUnosNiza.Location = new System.Drawing.Point(97, 341);
             this.panelUnosNiza.Name = "panelUnosNiza";
-            this.panelUnosNiza.Size = new System.Drawing.Size(328, 100);
+            this.panelUnosNiza.Size = new System.Drawing.Size(592, 100);
             this.panelUnosNiza.TabIndex = 7;
+            // 
+            // buttonKontrola
+            // 
+            this.buttonKontrola.Location = new System.Drawing.Point(479, 38);
+            this.buttonKontrola.Name = "buttonKontrola";
+            this.buttonKontrola.Size = new System.Drawing.Size(75, 23);
+            this.buttonKontrola.TabIndex = 9;
+            this.buttonKontrola.Text = "Pokreni";
+            this.buttonKontrola.UseVisualStyleBackColor = true;
+            this.buttonKontrola.Click += new System.EventHandler(this.buttonKontrola_Click);
             // 
             // buttonKreirajNasumicanNiz
             // 
-            this.buttonKreirajNasumicanNiz.Location = new System.Drawing.Point(106, 60);
+            this.buttonKreirajNasumicanNiz.Location = new System.Drawing.Point(49, 60);
             this.buttonKreirajNasumicanNiz.Name = "buttonKreirajNasumicanNiz";
             this.buttonKreirajNasumicanNiz.Size = new System.Drawing.Size(127, 23);
             this.buttonKreirajNasumicanNiz.TabIndex = 2;
@@ -176,6 +193,17 @@
             this.textBoxUnosNiza.Size = new System.Drawing.Size(164, 23);
             this.textBoxUnosNiza.TabIndex = 0;
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(332, 38);
+            this.trackBar1.Maximum = 5;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(104, 45);
+            this.trackBar1.TabIndex = 8;
+            this.trackBar1.Value = 1;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // timerUnosNiza
             // 
             this.timerUnosNiza.Tick += new System.EventHandler(this.timerUnosNiza_Tick);
@@ -189,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1003, 450);
             this.Controls.Add(this.panelUnosNiza);
             this.Controls.Add(this.buttonUnesiNiz);
             this.Controls.Add(this.ButtonShellSort);
@@ -202,6 +230,7 @@
             this.Text = "Form1";
             this.panelUnosNiza.ResumeLayout(false);
             this.panelUnosNiza.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,5 +255,7 @@
         private System.Windows.Forms.Timer timerUnosNiza;
         private Button buttonKreirajNasumicanNiz;
         private System.Windows.Forms.Timer timerShellSort;
+        private TrackBar trackBar1;
+        private Button buttonKontrola;
     }
 }
