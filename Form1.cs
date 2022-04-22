@@ -174,23 +174,36 @@ namespace Vizualizacija_algoritama_za_sortiranje
         {
             string n = textBoxUnosNiza.Text;
             int duzinaNiza = 0;
-            for(int i=0;i<n.Length;i++) if(n[i] == ',') duzinaNiza++;
+            for (int i = 1; i < n.Length-1; i++)
+            {
+                if (n[i] == ',' && n[i + 1] == ',')
+                {
+                    n = n.Remove(i, 1);
+                    i--;
+                }
+            }
+            for (int i = 1; i < n.Length - 1; i++)
+            {
+                if (n[i] == ',' && n[i - 1] != ',') duzinaNiza++;
+                //else while (i < n.Length - 1 && n[i] == ',' && n[i + 1] == ',') i++;
+            }
             string tmp = "";
             int[] tmpNiz=new int[duzinaNiza+1];
             duzinaNiza=0;
             for (int i = 0; i < n.Length; i++)
             {
-                if(n[i] >='0' && n[i] <='9')
+                if (n[i] >= '0' && n[i] <= '9')
                 {
                     tmp += n[i];
-                }else if (n[i] == ',')
+                }
+                else if (n[i] == ',' && tmp != "") 
                 {
                     tmpNiz[duzinaNiza]=Convert.ToInt32(tmp);
                     duzinaNiza++;
                     tmp = "";
                 }
             }
-            tmpNiz[duzinaNiza] = Convert.ToInt32(tmp);
+            if (tmp != "") tmpNiz[duzinaNiza] = Convert.ToInt32(tmp);
             
             niz = tmpNiz;
             
@@ -410,6 +423,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
         }
 
+
         private void timerInsertionSort_Tick(object sender, EventArgs e)
         {
             if (ib < array.Length - 1)
@@ -504,8 +518,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
             }
             else
             {
-                
-                trenutniTimer.Start();
+                if (!pauzirano) trenutniTimer.Start();
                 proba.Stop();
                 //MessageBox.Show(array[trenutni].Top.ToString());
             }

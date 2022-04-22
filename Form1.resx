@@ -75,7 +75,17 @@
   <metadata name="timerShellSort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>700, 17</value>
   </metadata>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Worst and Average Case Time Complexity: O(n*n). The worst-case occurs when an array is reverse sorted.
+Best Case Time Complexity: O(n). The best-case occurs when an array is already sorted.
+Auxiliary Space: O(1)
+Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
+Sorting In Place: Yes
+Stable: Yes
+Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm. 
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>48</value>
+    <value>50</value>
   </metadata>
 </root>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ButtonBubbleSort = new System.Windows.Forms.Button();
             this.timerSwap = new System.Windows.Forms.Timer(this.components);
             this.timerBubbleSort = new System.Windows.Forms.Timer(this.components);
@@ -48,6 +49,8 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.timerUnosNiza = new System.Windows.Forms.Timer(this.components);
             this.timerShellSort = new System.Windows.Forms.Timer(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelUnosNiza.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -135,6 +138,7 @@
             // 
             // buttonUnesiNiz
             // 
+            this.buttonUnesiNiz.Enabled = false;
             this.buttonUnesiNiz.Location = new System.Drawing.Point(386, 21);
             this.buttonUnesiNiz.Name = "buttonUnesiNiz";
             this.buttonUnesiNiz.Size = new System.Drawing.Size(75, 23);
@@ -213,11 +217,34 @@
             this.timerShellSort.Interval = 500;
             this.timerShellSort.Tick += new System.EventHandler(this.timerShellSort_Tick);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(710, 39);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(281, 179);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(710, 250);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(281, 191);
+            this.textBox2.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 450);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panelUnosNiza);
             this.Controls.Add(this.buttonUnesiNiz);
             this.Controls.Add(this.ButtonShellSort);
@@ -257,5 +284,8 @@
         private System.Windows.Forms.Timer timerShellSort;
         private TrackBar trackBar1;
         private Button buttonKontrola;
+        private Label label3;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }
