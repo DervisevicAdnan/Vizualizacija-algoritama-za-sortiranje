@@ -188,6 +188,11 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 //else while (i < n.Length - 1 && n[i] == ',' && n[i + 1] == ',') i++;
             }
             string tmp = "";
+            if (duzinaNiza > 9) 
+            {
+                MessageBox.Show("Niz je predug!!!\nMolim Vas unesite niz sa maksimalno 10 elemenata");
+                return;
+            }
             int[] tmpNiz=new int[duzinaNiza+1];
             duzinaNiza=0;
             for (int i = 0; i < n.Length; i++)
@@ -509,10 +514,10 @@ namespace Vizualizacija_algoritama_za_sortiranje
 
         private void proba_Tick(object sender, EventArgs e)
         {
-            if (smjer == 0 && array[trenutni].Top<300)
+            if (smjer == 0 && array[trenutni].Top<270)
             {
                 array[trenutni].Top += 5;
-            }else if(smjer == 1 && array[trenutni].Top > 200)
+            }else if(smjer == 1 && array[trenutni].Top > 180)
             {
                 array[trenutni].Top -= 5;
             }
@@ -554,7 +559,8 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 array[i] = new Label();
                 //array[i].AutoSize = true;
                 array[i].Text = niz[i].ToString();
-                array[i].Location = new Point(100 + 80 * i, 200);
+                int d = (850-(60 * niz.Length + 20 * (niz.Length - 1)))/2;
+                array[i].Location = new Point(d + 80 * i, 180);
                 array[i].ForeColor = Color.White;
                 array[i].BackColor = Color.Blue;
                 array[i].Size = new Size(60, 60);
