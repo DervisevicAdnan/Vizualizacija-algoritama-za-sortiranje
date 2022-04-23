@@ -219,7 +219,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(710, 39);
+            this.textBox1.Location = new System.Drawing.Point(863, 31);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -230,7 +230,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(710, 250);
+            this.textBox2.Location = new System.Drawing.Point(863, 247);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -242,7 +242,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 450);
+            this.ClientSize = new System.Drawing.Size(1166, 450);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panelUnosNiza);

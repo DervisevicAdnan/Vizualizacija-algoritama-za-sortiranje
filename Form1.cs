@@ -192,7 +192,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
             duzinaNiza=0;
             for (int i = 0; i < n.Length; i++)
             {
-                if (n[i] >= '0' && n[i] <= '9')
+                if (n[i] >= '0' && n[i] <= '9' && tmp.Length<3)
                 {
                     tmp += n[i];
                 }
