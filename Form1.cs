@@ -9,7 +9,6 @@
         bool swapped;
         int g;
         int trenutni;
-        int smjerOtvaranjaPanela = 1;
         int indexMin = 0, smjer = 0;
         bool pauzirano = true;
         System.Windows.Forms.Timer trenutniTimer;
@@ -33,16 +32,35 @@
             trenutniTimer = timerBubbleSort;
             //MessageBox.Show("ukljucen timer");
 
-            textBoxPseudokod.Text = "for i in range(n):\r\n" +
-                "    swapped = False\r\n" +
-                "    for j in range(0, n - i - 1):\r\n" +
-                "        if arr[j] > arr[j + 1] :\r\n" +
-                "            arr[j], arr[j + 1] = arr[j + 1], arr[j]\r\n" +
-                "            swapped = True\r\n" +
-                "    if swapped == False:\r\n" +
-                "        break";
+            labelNaslov.Text = "Bubble sort";
 
-            textBoxOpisAlgoritma.Text = "";
+            textBoxPseudokod.Text = "" +
+                "for i = 0 to n do\r\n" +
+                "    swapped = false\r\n" +
+                "    for j = 0 to n - i - 1 do\r\n" +
+                "        if (a[j] > a[j + 1]) then\r\n" +
+                "            swap(a[j], a[j + 1])\r\n" +
+                "            swapped = true\r\n" +
+                "        end if\r\n" +
+                "    end for\r\n" +
+                "    if not swapped then\r\n" +
+                "        break\r\n" +
+                "    end if\r\n" +
+                "end for";
+
+            textBoxOpisAlgoritma.Text = "Bubble sort ili metoda direktne zamjene " +
+                "je jedan od najjednostavnijih i zato najpopularnijih metoda " +
+                "sortiranja, ali, nažalost, i jedan od najneefikasnijih. Algoritam " +
+                "više puta sekvencijalno prolazi kroz niz i pri tome upoređuje svaki " +
+                "element sa narednim u nizu, pa ako ova dva elementa nisu u pravilnom " +
+                "poretku, zamijene im se mjesta. U prvom koraku najveći element " +
+                "sigurno dođe na posljednje mjesto i tako u svakom prolazu bar jedan " +
+                "element dođe na svoje mjesto. Poslije i-tog prolaza elementi " +
+                "a[n-i+1]..a[n] su sigurno na svojim mjestima. Kada n-1 viših elemenata " +
+                "budu na svojim mjestima, tada je i najmanji element na svom mjestu, pa " +
+                "je zato potrebno najviše n-1 prolaza za sortiranje čitavog niza.\r\n" +
+                "Vremenska kompleksnost: O(n^2)\r\n" +
+                "Pomoćni memorijski prostor: O(1)";
 
         }
 
@@ -60,6 +78,8 @@
             ButtonTrenutni = ButtonSelectionSort;
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerSelectionSort;
+
+            labelNaslov.Text = "Selection sort";
 
             textBoxPseudokod.Text = "" +
                 "for i = 1 to n-1 do\r\n" +
@@ -106,6 +126,8 @@
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerInsertionSort;
 
+            labelNaslov.Text = "Insertion sort";
+
             textBoxPseudokod.Text = "" +
                 "for i = 1 to n do\r\n" +
                 "   K = a[i]\r\n" +
@@ -146,6 +168,8 @@
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerShellSort;
 
+            labelNaslov.Text = "Shell sort";
+
             textBoxPseudokod.Text = "" +
                 "for i = 1 to t do \r\n" +
                 "   inc = h[i]\r\n" +
@@ -181,7 +205,6 @@
         {
             if (ib < array.Length - 1)
             {
-                label1.Text = "usao u ib= " + ib + ", jb= " + jb;
                 /*if (array[ib].BackColor != Color.Yellow)
                 {
                     array[ib].BackColor = Color.Yellow;
@@ -198,8 +221,6 @@
 
                 if (jb < array.Length - 1 - ib)
                 {
-                    label1.Text = "usao u jb";
-                    label2.Text = jb.ToString();
                     if (array[jb].BackColor != Color.YellowGreen)
                     {
                         array[jb].BackColor = Color.YellowGreen;
@@ -213,7 +234,6 @@
                         array[jb].BackColor = Color.Green;
                         array[jb + 1].BackColor = Color.Green;
 
-                        label1.Text = "iskljucen timer";
                         i1 = jb + 1;
                         i2 = jb;
                         x1 = array[jb + 1].Left;
@@ -255,23 +275,6 @@
                 ButtonTrenutni.Enabled = true;
                 ButtonTrenutni.PerformClick();
 
-            }
-        }
-
-        private void buttonUnesiNiz_Click(object sender, EventArgs e)
-        {
-            smjerOtvaranjaPanela *= -1;
-            timerUnosNiza.Start();
-
-        }
-
-        private void timerUnosNiza_Tick(object sender, EventArgs e)
-        {
-            panelUnosNiza.Height += (smjerOtvaranjaPanela * 5);
-            panelUnosNiza.Top += (-1 * smjerOtvaranjaPanela * 5);
-            if (panelUnosNiza.Height == 100 || panelUnosNiza.Height == 0)  
-            {
-                timerUnosNiza.Stop();
             }
         }
 
@@ -318,21 +321,17 @@
             niz = tmpNiz;
             
             kreirajNiz();
-            buttonUnesiNiz.PerformClick();
         }
 
         private void timerSelectionSort_Tick(object sender, EventArgs e)
         {
             if (ib < array.Length - 1)
             {
-                label1.Text = "usao u ib= " + ib + ", jb= " + jb;
                 if (array[ib].BackColor != Color.Yellow)
                 {
                     indexMin = ib;
                     array[ib].BackColor = Color.Yellow;
 
-                    label1.Text = "spavanje";
-                    label1.Text = "usao u ib= " + ib + ", jb= " + jb;
                     //System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
                     return;
                 }
@@ -341,8 +340,6 @@
 
                 if (jb < array.Length)
                 {
-                    label1.Text = "usao u jb";
-                    label2.Text = jb.ToString();
                     if (array[jb].BackColor != Color.YellowGreen)
                     {
                         array[jb].BackColor = Color.YellowGreen;
@@ -383,6 +380,9 @@
                     x1 = array[indexMin].Left;
                     x2 = array[ib].Left;
 
+                    array[i1].BringToFront();
+                    array[i2].BringToFront();
+
                     timerSwap.Start();
 
                     timerSelectionSort.Stop();
@@ -405,7 +405,7 @@
         {
             Random rnd=new Random();
             string nasumicniNiz = "";
-            for(int i = rnd.Next(2,7); i >= 0; i--)
+            for(int i = rnd.Next(2,9); i >= 0; i--)
             {
                 nasumicniNiz += rnd.Next(250) + ",";
             }
@@ -419,12 +419,8 @@
             {
                 if (ib < array.Length)
                 {
-                    label1.Text = "usao u ib= " + ib + ", jb= " + jb;
-
                     if (jb >= g && jb < array.Length)
                     {
-                        label1.Text = "usao u jb";
-                        label2.Text = jb.ToString();
                         if (array[jb].BackColor != Color.YellowGreen)
                         {
                             trenutni = jb;
@@ -444,7 +440,6 @@
                             array[jb].BackColor = Color.Green;
                             array[jb - g].BackColor = Color.Green;
 
-                            label1.Text = "iskljucen timer";
                             i1 = jb;
                             i2 = jb - g;
                             x1 = array[jb].Left;
@@ -533,17 +528,17 @@
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void timerInsertionSort_Tick(object sender, EventArgs e)
         {
             if (ib < array.Length - 1)
             {
-                label1.Text = "usao u ib= " + ib + ", jb= " + jb;
-
                 if (jb > 0 && jb < array.Length)
                 {
-                    label1.Text = "usao u jb";
-                    label2.Text = jb.ToString();
                     if (array[jb].BackColor != Color.YellowGreen)
                     {
                         trenutni = jb;
@@ -563,7 +558,6 @@
                         array[jb].BackColor = Color.Green;
                         array[jb - 1].BackColor = Color.Green;
 
-                        label1.Text = "iskljucen timer";
                         i1 = jb;
                         i2 = jb - 1;
                         x1 = array[jb].Left;
@@ -649,6 +643,9 @@
 
             trenutniTimer = timerBubbleSort;
             ButtonTrenutni = ButtonBubbleSort;
+
+            /*textBoxUnosNiza.AutoSize = false;
+            textBoxUnosNiza.Height = 41;*/
         }
 
         private void kreirajNiz()
@@ -678,7 +675,6 @@
 
         private void timerSwap_Tick(object sender, EventArgs e)
         {
-            label1.Text = "ukljucen swap za " + i1 + " " + i2;
             if (array[i1].Left != x2)
             {
                 array[i1].Left -= 5;

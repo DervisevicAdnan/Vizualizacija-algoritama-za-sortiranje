@@ -69,33 +69,32 @@
   <metadata name="timerInsertionSort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>418, 17</value>
   </metadata>
-  <metadata name="timerUnosNiza.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>568, 17</value>
-  </metadata>
   <metadata name="timerShellSort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>700, 17</value>
+    <value>566, 20</value>
   </metadata>
   <data name="textBoxOpisAlgoritma.Text" xml:space="preserve">
-    <value>Worst and Average Case Time Complexity: O(n*n). The worst-case occurs when an array is reverse sorted.
-Best Case Time Complexity: O(n). The best-case occurs when an array is already sorted.
-Auxiliary Space: O(1)
-Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
-Sorting In Place: Yes
-Stable: Yes
-Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm. 
-</value>
+    <value>Bubble sort ili metoda direktne zamjene je jedan od najjednostavnijih i zato najpopularnijih metoda sortiranja, ali, nažalost, i jedan od najneefikasnijih. Algoritam više puta sekvencijalno prolazi kroz niz i pri tome upoređuje svaki element sa narednim u nizu, pa ako ova dva elementa nisu u pravilnom poretku, zamijene im se mjesta. U prvom koraku najveći element sigurno dođe na posljednje mjesto i tako u svakom prolazu bar jedan element dođe na svoje mjesto. Poslije i-tog prolaza elementi a[n-i+1]..a[n] su sigurno na svojim mjestima. Kada n-1 viših elemenata budu na svojim mjestima, tada je i najmanji element na svom mjestu, pa je zato potrebno najviše n-1 prolaza za sortiranje čitavog niza.
+Vremenska kompleksnost: O(n^2)
+Pomoćni memorijski prostor: O(1)</value>
   </data>
   <data name="textBoxPseudokod.Text" xml:space="preserve">
-    <value>for i in range(n):
-    swapped = False
-    for j in range(0, n - i - 1):
-        if arr[j] &gt; arr[j + 1] :
-            arr[j], arr[j + 1] = arr[j + 1], arr[j]
-            swapped = True
-    if swapped == False:
-        break</value>
+    <value>for i = 0 to n do
+    swapped = false
+    for j = 0 to n - i - 1 do
+        if (a[j] &gt; a[j + 1]) then
+            swap(a[j], a[j + 1])
+            swapped = true
+        end if
+    end for
+    if not swapped then
+        break
+    end if
+end for</value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>50</value>
+    <value>44</value>
   </metadata>
 </root>

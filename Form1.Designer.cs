@@ -40,27 +40,28 @@
             this.ButtonInsertionSort = new System.Windows.Forms.Button();
             this.timerInsertionSort = new System.Windows.Forms.Timer(this.components);
             this.ButtonShellSort = new System.Windows.Forms.Button();
-            this.buttonUnesiNiz = new System.Windows.Forms.Button();
-            this.panelUnosNiza = new System.Windows.Forms.Panel();
-            this.buttonKontrola = new System.Windows.Forms.Button();
             this.buttonKreirajNasumicanNiz = new System.Windows.Forms.Button();
             this.buttonKreirajNiz = new System.Windows.Forms.Button();
             this.textBoxUnosNiza = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.timerUnosNiza = new System.Windows.Forms.Timer(this.components);
+            this.buttonKontrola = new System.Windows.Forms.Button();
             this.timerShellSort = new System.Windows.Forms.Timer(this.components);
             this.textBoxOpisAlgoritma = new System.Windows.Forms.TextBox();
             this.textBoxPseudokod = new System.Windows.Forms.TextBox();
-            this.panelUnosNiza.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelNaslov = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonBubbleSort
             // 
             this.ButtonBubbleSort.Enabled = false;
-            this.ButtonBubbleSort.Location = new System.Drawing.Point(97, 61);
+            this.ButtonBubbleSort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ButtonBubbleSort.Location = new System.Drawing.Point(134, 28);
             this.ButtonBubbleSort.Name = "ButtonBubbleSort";
-            this.ButtonBubbleSort.Size = new System.Drawing.Size(102, 23);
+            this.ButtonBubbleSort.Size = new System.Drawing.Size(105, 33);
             this.ButtonBubbleSort.TabIndex = 0;
             this.ButtonBubbleSort.Text = "Bubble sort";
             this.ButtonBubbleSort.UseVisualStyleBackColor = true;
@@ -79,28 +80,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(614, 65);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(946, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(112, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Opis algoritma";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(614, 99);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(955, 227);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "Pseudokod";
             // 
             // ButtonSelectionSort
             // 
-            this.ButtonSelectionSort.Location = new System.Drawing.Point(217, 61);
+            this.ButtonSelectionSort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ButtonSelectionSort.Location = new System.Drawing.Point(291, 28);
             this.ButtonSelectionSort.Name = "ButtonSelectionSort";
-            this.ButtonSelectionSort.Size = new System.Drawing.Size(105, 23);
+            this.ButtonSelectionSort.Size = new System.Drawing.Size(105, 33);
             this.ButtonSelectionSort.TabIndex = 3;
             this.ButtonSelectionSort.Text = "Selection sort";
             this.ButtonSelectionSort.UseVisualStyleBackColor = true;
@@ -113,9 +116,10 @@
             // 
             // ButtonInsertionSort
             // 
-            this.ButtonInsertionSort.Location = new System.Drawing.Point(337, 61);
+            this.ButtonInsertionSort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ButtonInsertionSort.Location = new System.Drawing.Point(444, 28);
             this.ButtonInsertionSort.Name = "ButtonInsertionSort";
-            this.ButtonInsertionSort.Size = new System.Drawing.Size(101, 23);
+            this.ButtonInsertionSort.Size = new System.Drawing.Size(109, 33);
             this.ButtonInsertionSort.TabIndex = 4;
             this.ButtonInsertionSort.Text = "Insertion Sort";
             this.ButtonInsertionSort.UseVisualStyleBackColor = true;
@@ -128,53 +132,21 @@
             // 
             // ButtonShellSort
             // 
-            this.ButtonShellSort.Location = new System.Drawing.Point(459, 61);
+            this.ButtonShellSort.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ButtonShellSort.Location = new System.Drawing.Point(608, 28);
             this.ButtonShellSort.Name = "ButtonShellSort";
-            this.ButtonShellSort.Size = new System.Drawing.Size(75, 23);
+            this.ButtonShellSort.Size = new System.Drawing.Size(100, 33);
             this.ButtonShellSort.TabIndex = 5;
             this.ButtonShellSort.Text = "Shell sort";
             this.ButtonShellSort.UseVisualStyleBackColor = true;
             this.ButtonShellSort.Click += new System.EventHandler(this.ButtonShellSort_Click);
             // 
-            // buttonUnesiNiz
-            // 
-            this.buttonUnesiNiz.Enabled = false;
-            this.buttonUnesiNiz.Location = new System.Drawing.Point(386, 21);
-            this.buttonUnesiNiz.Name = "buttonUnesiNiz";
-            this.buttonUnesiNiz.Size = new System.Drawing.Size(75, 23);
-            this.buttonUnesiNiz.TabIndex = 6;
-            this.buttonUnesiNiz.Text = "Unesi niz";
-            this.buttonUnesiNiz.UseVisualStyleBackColor = true;
-            this.buttonUnesiNiz.Click += new System.EventHandler(this.buttonUnesiNiz_Click);
-            // 
-            // panelUnosNiza
-            // 
-            this.panelUnosNiza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelUnosNiza.Controls.Add(this.buttonKontrola);
-            this.panelUnosNiza.Controls.Add(this.buttonKreirajNasumicanNiz);
-            this.panelUnosNiza.Controls.Add(this.buttonKreirajNiz);
-            this.panelUnosNiza.Controls.Add(this.textBoxUnosNiza);
-            this.panelUnosNiza.Controls.Add(this.trackBar1);
-            this.panelUnosNiza.Location = new System.Drawing.Point(97, 341);
-            this.panelUnosNiza.Name = "panelUnosNiza";
-            this.panelUnosNiza.Size = new System.Drawing.Size(592, 100);
-            this.panelUnosNiza.TabIndex = 7;
-            // 
-            // buttonKontrola
-            // 
-            this.buttonKontrola.Location = new System.Drawing.Point(479, 38);
-            this.buttonKontrola.Name = "buttonKontrola";
-            this.buttonKontrola.Size = new System.Drawing.Size(75, 23);
-            this.buttonKontrola.TabIndex = 9;
-            this.buttonKontrola.Text = "Pokreni";
-            this.buttonKontrola.UseVisualStyleBackColor = true;
-            this.buttonKontrola.Click += new System.EventHandler(this.buttonKontrola_Click);
-            // 
             // buttonKreirajNasumicanNiz
             // 
-            this.buttonKreirajNasumicanNiz.Location = new System.Drawing.Point(49, 60);
+            this.buttonKreirajNasumicanNiz.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonKreirajNasumicanNiz.Location = new System.Drawing.Point(103, 397);
             this.buttonKreirajNasumicanNiz.Name = "buttonKreirajNasumicanNiz";
-            this.buttonKreirajNasumicanNiz.Size = new System.Drawing.Size(127, 23);
+            this.buttonKreirajNasumicanNiz.Size = new System.Drawing.Size(183, 44);
             this.buttonKreirajNasumicanNiz.TabIndex = 2;
             this.buttonKreirajNasumicanNiz.Text = "Kreiraj nasumičan niz";
             this.buttonKreirajNasumicanNiz.UseVisualStyleBackColor = true;
@@ -182,9 +154,10 @@
             // 
             // buttonKreirajNiz
             // 
-            this.buttonKreirajNiz.Location = new System.Drawing.Point(210, 22);
+            this.buttonKreirajNiz.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonKreirajNiz.Location = new System.Drawing.Point(265, 340);
             this.buttonKreirajNiz.Name = "buttonKreirajNiz";
-            this.buttonKreirajNiz.Size = new System.Drawing.Size(75, 23);
+            this.buttonKreirajNiz.Size = new System.Drawing.Size(105, 41);
             this.buttonKreirajNiz.TabIndex = 1;
             this.buttonKreirajNiz.Text = "Kreiraj niz";
             this.buttonKreirajNiz.UseVisualStyleBackColor = true;
@@ -192,25 +165,35 @@
             // 
             // textBoxUnosNiza
             // 
-            this.textBoxUnosNiza.Location = new System.Drawing.Point(25, 22);
+            this.textBoxUnosNiza.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxUnosNiza.Location = new System.Drawing.Point(67, 349);
+            this.textBoxUnosNiza.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.textBoxUnosNiza.MaximumSize = new System.Drawing.Size(192, 43);
             this.textBoxUnosNiza.Name = "textBoxUnosNiza";
-            this.textBoxUnosNiza.Size = new System.Drawing.Size(164, 23);
+            this.textBoxUnosNiza.Size = new System.Drawing.Size(192, 25);
             this.textBoxUnosNiza.TabIndex = 0;
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(332, 38);
+            this.trackBar1.Location = new System.Drawing.Point(482, 376);
             this.trackBar1.Maximum = 5;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 45);
+            this.trackBar1.Size = new System.Drawing.Size(125, 45);
             this.trackBar1.TabIndex = 8;
             this.trackBar1.Value = 1;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
-            // timerUnosNiza
+            // buttonKontrola
             // 
-            this.timerUnosNiza.Tick += new System.EventHandler(this.timerUnosNiza_Tick);
+            this.buttonKontrola.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonKontrola.Location = new System.Drawing.Point(712, 365);
+            this.buttonKontrola.Name = "buttonKontrola";
+            this.buttonKontrola.Size = new System.Drawing.Size(99, 40);
+            this.buttonKontrola.TabIndex = 9;
+            this.buttonKontrola.Text = "Pokreni";
+            this.buttonKontrola.UseVisualStyleBackColor = true;
+            this.buttonKontrola.Click += new System.EventHandler(this.buttonKontrola_Click);
             // 
             // timerShellSort
             // 
@@ -220,7 +203,7 @@
             // textBoxOpisAlgoritma
             // 
             this.textBoxOpisAlgoritma.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxOpisAlgoritma.Location = new System.Drawing.Point(863, 31);
+            this.textBoxOpisAlgoritma.Location = new System.Drawing.Point(863, 39);
             this.textBoxOpisAlgoritma.Multiline = true;
             this.textBoxOpisAlgoritma.Name = "textBoxOpisAlgoritma";
             this.textBoxOpisAlgoritma.ReadOnly = true;
@@ -232,7 +215,7 @@
             // textBoxPseudokod
             // 
             this.textBoxPseudokod.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPseudokod.Location = new System.Drawing.Point(863, 247);
+            this.textBoxPseudokod.Location = new System.Drawing.Point(863, 250);
             this.textBoxPseudokod.Multiline = true;
             this.textBoxPseudokod.Name = "textBoxPseudokod";
             this.textBoxPseudokod.ReadOnly = true;
@@ -241,25 +224,71 @@
             this.textBoxPseudokod.TabIndex = 10;
             this.textBoxPseudokod.Text = resources.GetString("textBoxPseudokod.Text");
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(482, 413);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Sporo";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(577, 413);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 15);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Brzo";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(482, 340);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 19);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Podešavanje brzine";
+            // 
+            // labelNaslov
+            // 
+            this.labelNaslov.AutoSize = true;
+            this.labelNaslov.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelNaslov.Location = new System.Drawing.Point(368, 93);
+            this.labelNaslov.Name = "labelNaslov";
+            this.labelNaslov.Size = new System.Drawing.Size(116, 25);
+            this.labelNaslov.TabIndex = 14;
+            this.labelNaslov.Text = "Bubble sort";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 450);
+            this.Controls.Add(this.labelNaslov);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonKreirajNasumicanNiz);
+            this.Controls.Add(this.buttonKontrola);
+            this.Controls.Add(this.textBoxUnosNiza);
+            this.Controls.Add(this.buttonKreirajNiz);
             this.Controls.Add(this.textBoxPseudokod);
             this.Controls.Add(this.textBoxOpisAlgoritma);
-            this.Controls.Add(this.panelUnosNiza);
-            this.Controls.Add(this.buttonUnesiNiz);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.ButtonShellSort);
             this.Controls.Add(this.ButtonInsertionSort);
             this.Controls.Add(this.ButtonSelectionSort);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonBubbleSort);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.panelUnosNiza.ResumeLayout(false);
-            this.panelUnosNiza.PerformLayout();
+            this.Text = "Vizualizacija algoritama za sortiranje";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -278,11 +307,8 @@
         private Button ButtonInsertionSort;
         private System.Windows.Forms.Timer timerInsertionSort;
         private Button ButtonShellSort;
-        private Button buttonUnesiNiz;
-        private Panel panelUnosNiza;
         private Button buttonKreirajNiz;
         private TextBox textBoxUnosNiza;
-        private System.Windows.Forms.Timer timerUnosNiza;
         private Button buttonKreirajNasumicanNiz;
         private System.Windows.Forms.Timer timerShellSort;
         private TrackBar trackBar1;
@@ -290,5 +316,9 @@
         private Label label3;
         private TextBox textBoxOpisAlgoritma;
         private TextBox textBoxPseudokod;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label labelNaslov;
     }
 }
