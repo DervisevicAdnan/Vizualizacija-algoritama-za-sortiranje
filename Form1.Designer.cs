@@ -49,8 +49,8 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.timerUnosNiza = new System.Windows.Forms.Timer(this.components);
             this.timerShellSort = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxOpisAlgoritma = new System.Windows.Forms.TextBox();
+            this.textBoxPseudokod = new System.Windows.Forms.TextBox();
             this.panelUnosNiza.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -217,34 +217,37 @@
             this.timerShellSort.Interval = 500;
             this.timerShellSort.Tick += new System.EventHandler(this.timerShellSort_Tick);
             // 
-            // textBox1
+            // textBoxOpisAlgoritma
             // 
-            this.textBox1.Location = new System.Drawing.Point(863, 31);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(281, 179);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBoxOpisAlgoritma.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxOpisAlgoritma.Location = new System.Drawing.Point(863, 31);
+            this.textBoxOpisAlgoritma.Multiline = true;
+            this.textBoxOpisAlgoritma.Name = "textBoxOpisAlgoritma";
+            this.textBoxOpisAlgoritma.ReadOnly = true;
+            this.textBoxOpisAlgoritma.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxOpisAlgoritma.Size = new System.Drawing.Size(281, 179);
+            this.textBoxOpisAlgoritma.TabIndex = 9;
+            this.textBoxOpisAlgoritma.Text = resources.GetString("textBoxOpisAlgoritma.Text");
             // 
-            // textBox2
+            // textBoxPseudokod
             // 
-            this.textBox2.Location = new System.Drawing.Point(863, 247);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(281, 191);
-            this.textBox2.TabIndex = 10;
+            this.textBoxPseudokod.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPseudokod.Location = new System.Drawing.Point(863, 247);
+            this.textBoxPseudokod.Multiline = true;
+            this.textBoxPseudokod.Name = "textBoxPseudokod";
+            this.textBoxPseudokod.ReadOnly = true;
+            this.textBoxPseudokod.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPseudokod.Size = new System.Drawing.Size(281, 191);
+            this.textBoxPseudokod.TabIndex = 10;
+            this.textBoxPseudokod.Text = resources.GetString("textBoxPseudokod.Text");
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 450);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPseudokod);
+            this.Controls.Add(this.textBoxOpisAlgoritma);
             this.Controls.Add(this.panelUnosNiza);
             this.Controls.Add(this.buttonUnesiNiz);
             this.Controls.Add(this.ButtonShellSort);
@@ -285,7 +288,7 @@
         private TrackBar trackBar1;
         private Button buttonKontrola;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBoxOpisAlgoritma;
+        private TextBox textBoxPseudokod;
     }
 }

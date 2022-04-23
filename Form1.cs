@@ -1,4 +1,4 @@
-namespace Vizualizacija_algoritama_za_sortiranje
+﻿namespace Vizualizacija_algoritama_za_sortiranje
 {
     public partial class Form1 : Form
     {
@@ -6,6 +6,7 @@ namespace Vizualizacija_algoritama_za_sortiranje
         int[] niz = { 4, 2, 20, 4, 10, 6 };
         int i1=0, i2=5, x1=100, x2=100+50*5;
         int ib, jb;
+        bool swapped;
         int g;
         int trenutni;
         int smjerOtvaranjaPanela = 1;
@@ -31,6 +32,18 @@ namespace Vizualizacija_algoritama_za_sortiranje
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerBubbleSort;
             //MessageBox.Show("ukljucen timer");
+
+            textBoxPseudokod.Text = "for i in range(n):\r\n" +
+                "    swapped = False\r\n" +
+                "    for j in range(0, n - i - 1):\r\n" +
+                "        if arr[j] > arr[j + 1] :\r\n" +
+                "            arr[j], arr[j + 1] = arr[j + 1], arr[j]\r\n" +
+                "            swapped = True\r\n" +
+                "    if swapped == False:\r\n" +
+                "        break";
+
+            textBoxOpisAlgoritma.Text = "";
+
         }
 
         private void ButtonSelectionSort_Click(object sender, EventArgs e)
@@ -47,6 +60,35 @@ namespace Vizualizacija_algoritama_za_sortiranje
             ButtonTrenutni = ButtonSelectionSort;
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerSelectionSort;
+
+            textBoxPseudokod.Text = "" +
+                "for i = 1 to n-1 do\r\n" +
+                "   min = a[i]\r\n" +
+                "   pos = i\r\n" +
+                "   for j = i+1 to n do\r\n" +
+                "       if(a[j] > min) then\r\n" +
+                "           min = a[j]\r\n" +
+                "           pos = j\r\n" +
+                "       end if\r\n" +
+                "   end for\r\n" +
+                "   a[pos] = a[i]\r\n" +
+                "   a[i] = min\r\n" +
+                "end for";
+            textBoxOpisAlgoritma.Text = "" +
+                "Selection sort ili sortiranje direktnom selekcijom je osnovni i " +
+                "najjednostavniji metod sortiranja iz grupe sortiranja poređenjem. Tokom " +
+                "rada algoritma održava se uređeni i neuređeni dio niza. U " +
+                "početku je čitav niz neuređeni dio. Zatim se sekvencijalnim pretraživanjem ovog " +
+                "dijela nađe najmanji element, pa se on zamijeni sa prvim elementom. " +
+                "\r\nPoslije i-1 koraka podniz a[0]..a[i-1] predstavlja uređeni dio, " +
+                "a a[i]..a[n] neuređeni dio. Onda se u koraku i selektuje najmanji " +
+                "element neuređenog dijela, pa on zamijeni mjesto sa prvim elementom " +
+                "neuređenog dijela i tako prelazi u uređeni dio. Postupak se završava" +
+                " kad se neuređeni dio svede samo na jedan element, čime i on postaje " +
+                "uređen.\r\n" +
+                "Vremenska kompleksnost: O(n^2)\r\n" +
+                "Pomoćni memorijski prostor: O(1)";
+
         }
 
         private void ButtonInsertionSort_Click(object sender, EventArgs e)
@@ -63,6 +105,30 @@ namespace Vizualizacija_algoritama_za_sortiranje
             ButtonTrenutni = ButtonInsertionSort;
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerInsertionSort;
+
+            textBoxPseudokod.Text = "" +
+                "for i = 1 to n do\r\n" +
+                "   K = a[i]\r\n" +
+                "   j = i-1\r\n" +
+                "   while (j > 0) and (a[j] > K) do\r\n" +
+                "       a[j+1] = a[j]\r\n" +
+                "       j = j-1\r\n" +
+                "   end while\r\n" +
+                "   a[j+1] = K\r\n" +
+                "end for";
+
+            textBoxOpisAlgoritma.Text = "Osnovni princip rada grupe sortiranja poređenjem " +
+                "se najbolje oslikava u metodu direktnog poređenja, odnosno insertion sort " +
+                "metodi. U početku se uređeni dio sastoji samo od prvog elementa niza, a " +
+                "u neuređeni dio spadaju svi ostali elementi. Neka se poslije i-1 koraka u " +
+                "uređenom dijelu nalaze elementi a[1]...a[i-1]. Tada se u koraku i uzima " +
+                "prvi element iz neuređenog dijela a[i] i ubacuje na mjesto koje mu po " +
+                "neopadajućem poretku odgovara u uređenom dijelu, čime se ovaj dio povećava " +
+                "za jedan element. Sortiranje se završava kad nema više elemenata u " +
+                "neuređenom dijelu.\r\n" +
+                "Vremenska kompleksnost: O(n^2)\r\n" +
+                "Pomoćni memorijski prostor: O(1)";
+
         }
         private void ButtonShellSort_Click(object sender, EventArgs e)
         {
@@ -79,6 +145,36 @@ namespace Vizualizacija_algoritama_za_sortiranje
             ButtonTrenutni = ButtonShellSort;
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerShellSort;
+
+            textBoxPseudokod.Text = "" +
+                "for i = 1 to t do \r\n" +
+                "   inc = h[i]\r\n" +
+                "   for j = inc + 1 to n\r\n" +
+                "       y = a[j]\r\n" +
+                "       k = j - inc\r\n" +
+                "       while (k >= 1) and (y < a[k]) do\r\n" +
+                "           a[k + inc] = a[k]\r\n" +
+                "           k = k - inc\r\n" +
+                "       end while\r\n" +
+                "       a[k + inc] = y\r\n" +
+                "   end for\r\n" +
+                "end for";
+
+            textBoxOpisAlgoritma.Text = "Shell sort ili metoda umetanja sa smanjenjem " +
+                "inkrementa je metoda koja prvo razdvoji početni niz na grupe tako što " +
+                "u svaku grupu svrstava elemente na ekvidistantnim pozicijama u nizu. " +
+                "Ovaj razmak između elemenata u grupi se naziva inkrementom h[1]. Broj " +
+                "grupa odgovara vrijednosti inkrementa.\r\nOve grupe se posebno " +
+                "sortiraju primjenom metode direktnog umetanja i niz postaje " +
+                "h[1]-sortiran. U narednom koraku u nizu koji je nastao poslije prvog " +
+                "koraka inkrement se smanjuje na h[2]<h[1] i tako formira manji broj " +
+                "grupa sa većim brojem elemenata, pa se one opet nezavisno sortiraju. " +
+                "U svakom sljedećem koraku isti postupak se ponavlja sa smanjenim " +
+                "inkrementom. Na kraju se postupak završava svođenjem inkrementa na 1.\r\n" +
+                "Vremenska kompleksnost zavisi od broja inkremenata i njihovih " +
+                "vrijednosti, a za niz koji je Knuth predložio {..., 121, 40, 13, 4, 1} " +
+                "vremenska kompleksnost je O(n^(3 / 2))";
+
         }
 
         private void timerBubbleSort_Tick(object sender, EventArgs e)
@@ -124,6 +220,8 @@ namespace Vizualizacija_algoritama_za_sortiranje
                         x2 = array[jb].Left;
                         jb++;
 
+                        swapped = true;
+
                         timerSwap.Start();
 
                         timerBubbleSort.Stop();
@@ -138,7 +236,14 @@ namespace Vizualizacija_algoritama_za_sortiranje
                 }
                 else
                 {
+                    if(!swapped)
+                    {
+                        timerBubbleSort.Stop();
+                        ButtonTrenutni.Enabled = true;
+                        ButtonTrenutni.PerformClick();
+                    }
                     array[ib].BackColor = Color.Blue;
+                    swapped = false;
                     ib++;
                     jb = 0;
                 }
