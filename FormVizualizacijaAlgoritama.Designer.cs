@@ -1,6 +1,6 @@
 ﻿namespace Vizualizacija_algoritama_za_sortiranje
 {
-    partial class Form1
+    partial class FormVizualizacijaAlgoritama
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVizualizacijaAlgoritama));
             this.ButtonBubbleSort = new System.Windows.Forms.Button();
             this.timerSwap = new System.Windows.Forms.Timer(this.components);
             this.timerBubbleSort = new System.Windows.Forms.Timer(this.components);
@@ -262,7 +262,7 @@
             this.labelNaslov.TabIndex = 14;
             this.labelNaslov.Text = "Bubble sort";
             // 
-            // Form1
+            // FormVizualizacijaAlgoritama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -286,8 +286,9 @@
             this.Controls.Add(this.ButtonBubbleSort);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FormVizualizacijaAlgoritama";
             this.Text = "Vizualizacija algoritama za sortiranje";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormVizualizacijaAlgoritama_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);

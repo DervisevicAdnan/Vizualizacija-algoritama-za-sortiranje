@@ -5,7 +5,6 @@ C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\bin\Debug\net6.0-
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\bin\Debug\net6.0-windows\ref\Vizualizacija algoritama za sortiranje.dll
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\bin\Debug\net6.0-windows\Vizualizacija algoritama za sortiranje.pdb
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija algoritama za sortiranje.csproj.AssemblyReference.cache
-C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija_algoritama_za_sortiranje.Form1.resources
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija algoritama za sortiranje.csproj.GenerateResource.cache
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija algoritama za sortiranje.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija algoritama za sortiranje.AssemblyInfoInputs.cache
@@ -15,3 +14,6 @@ C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\ref\Vizualizacija algoritama za sortiranje.dll
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija algoritama za sortiranje.pdb
 C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija algoritama za sortiranje.genruntimeconfig.cache
+C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija_algoritama_za_sortiranje.FormVizualizacijaAlgoritama.resources
+C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija_algoritama_za_sortiranje.FormUvodna.resources
+C:\Users\Sabina\Desktop\Vizualizacija algoritama za sortiranje\obj\Debug\net6.0-windows\Vizualizacija_algoritama_za_sortiranje.Properties.Resources.resources

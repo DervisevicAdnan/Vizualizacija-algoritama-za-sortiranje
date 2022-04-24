@@ -1,6 +1,6 @@
 ﻿namespace Vizualizacija_algoritama_za_sortiranje
 {
-    public partial class Form1 : Form
+    public partial class FormVizualizacijaAlgoritama : Form
     {
         Label[] array;
         int[] niz = { 4, 2, 20, 4, 10, 6 };
@@ -533,6 +533,11 @@
 
         }
 
+        private void FormVizualizacijaAlgoritama_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void timerInsertionSort_Tick(object sender, EventArgs e)
         {
             if (ib < array.Length - 1)
@@ -631,7 +636,7 @@
         }
         
 
-        public Form1()
+        public FormVizualizacijaAlgoritama()
         {
             InitializeComponent();
             kreirajNiz();
