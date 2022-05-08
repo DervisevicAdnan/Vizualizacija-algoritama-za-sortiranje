@@ -25,12 +25,10 @@
             trenutniTimer.Stop();
             buttonKontrola.Text = "Pokreni";
 
-            //timerBubbleSort.Enabled = true;
             ButtonTrenutni.Enabled = true;
             ButtonTrenutni = ButtonBubbleSort;
             ButtonTrenutni.Enabled = false;
             trenutniTimer = timerBubbleSort;
-            //MessageBox.Show("ukljucen timer");
 
             labelNaslov.Text = "Bubble sort";
 
@@ -73,7 +71,6 @@
             trenutniTimer.Stop();
             buttonKontrola.Text = "Pokreni";
 
-            //timerSelectionSort.Enabled = true;
             ButtonTrenutni.Enabled = true;
             ButtonTrenutni = ButtonSelectionSort;
             ButtonTrenutni.Enabled = false;
@@ -120,7 +117,6 @@
             trenutniTimer.Stop();
             buttonKontrola.Text = "Pokreni";
 
-            //timerInsertionSort.Enabled = true;
             ButtonTrenutni.Enabled = true;
             ButtonTrenutni = ButtonInsertionSort;
             ButtonTrenutni.Enabled = false;
@@ -162,7 +158,6 @@
             trenutniTimer.Stop();
             buttonKontrola.Text = "Pokreni";
 
-            //timerShellSort.Enabled = true;
             ButtonTrenutni.Enabled = true;
             ButtonTrenutni = ButtonShellSort;
             ButtonTrenutni.Enabled = false;
@@ -205,19 +200,6 @@
         {
             if (ib < array.Length - 1)
             {
-                /*if (array[ib].BackColor != Color.Yellow)
-                {
-                    array[ib].BackColor = Color.Yellow;
-
-                    label1.Text = "spavanje";
-                    label1.Text = "usao u ib= " + ib + ", jb= " + jb;
-                    //System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
-                    proba.Interval = 1000;
-                    proba.Start();
-                    return;
-                }*/
-
-                //MessageBox.Show("ja jedem govna");
 
                 if (jb < array.Length - 1 - ib)
                 {
@@ -228,7 +210,6 @@
                         return;
 
                     }
-                    //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
                     if (Convert.ToInt32(array[jb].Text) > Convert.ToInt32(array[jb + 1].Text))
                     {
                         array[jb].BackColor = Color.Green;
@@ -250,8 +231,6 @@
                     array[jb].BackColor = Color.Blue;
                     array[jb + 1].BackColor = Color.Blue;
                     jb++;
-
-                    //MessageBox.Show(jb.ToString());
 
                 }
                 else
@@ -293,7 +272,6 @@
             for (int i = 1; i < n.Length - 1; i++)
             {
                 if (n[i] == ',' && n[i - 1] != ',') duzinaNiza++;
-                //else while (i < n.Length - 1 && n[i] == ',' && n[i + 1] == ',') i++;
             }
             string tmp = "";
             if (duzinaNiza > 9) 
@@ -331,46 +309,24 @@
                 {
                     indexMin = ib;
                     array[ib].BackColor = Color.Yellow;
-
-                    //System.Windows.Forms.Timer proba = new System.Windows.Forms.Timer();
                     return;
                 }
-
-                //MessageBox.Show("ja jedem govna");
-
                 if (jb < array.Length)
                 {
                     if (array[jb].BackColor != Color.YellowGreen)
                     {
                         array[jb].BackColor = Color.YellowGreen;
                         return;
-
                     }
-                    //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
                     if (Convert.ToInt32(array[indexMin].Text) > Convert.ToInt32(array[jb].Text))
                     {
                         array[indexMin].BackColor = Color.Blue;
                         array[ib].BackColor = Color.Yellow;
                         indexMin = jb;
-                        //array[ib].BackColor = Color.Green;
                         array[jb].BackColor = Color.Green;
-
-                        /*label1.Text = "iskljucen timer";
-                        i1 = jb;
-                        i2 = ib;
-                        x1 = array[jb].Left;
-                        x2 = array[ib].Left;
-
-                        timerSwap.Start();
-
-                        timerSelectionSort.Stop();
-                        return;*/
                     }
                     if (indexMin != jb) array[jb].BackColor = Color.Blue;
                     jb++;
-
-                    //MessageBox.Show(jb.ToString());
-
                 }
                 else
                 {
@@ -379,19 +335,14 @@
                     i2 = ib;
                     x1 = array[indexMin].Left;
                     x2 = array[ib].Left;
-
                     array[i1].BringToFront();
                     array[i2].BringToFront();
-
                     timerSwap.Start();
-
                     timerSelectionSort.Stop();
-
                     ib++;
                     jb = ib + 1;
                     return;
                 }
-
             }
             else
             {
@@ -430,11 +381,9 @@
                             proba.Interval = 100 / trackBar1.Value;
                             proba.Start();
                             timerShellSort.Stop();
-                            //MessageBox.Show("POKRENUTOOOOOO");
                             return;
 
                         }
-                        //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
                         if (Convert.ToInt32(array[jb].Text) < Convert.ToInt32(array[jb - g].Text))
                         {
                             array[jb].BackColor = Color.Green;
@@ -465,10 +414,6 @@
                             jb = ib;
                             return;
                         }
-                        //array[jb].BackColor = Color.Blue;
-                        //array[jb - 1].BackColor = Color.Blue;
-
-                        //MessageBox.Show(jb.ToString());
 
                     }
                     else
@@ -553,11 +498,9 @@
                         proba.Interval = 100 / trackBar1.Value;
                         proba.Start();
                         timerInsertionSort.Stop();
-                        //MessageBox.Show("POKRENUTOOOOOO");
                         return;
 
                     }
-                    //if(jb%2==1) MessageBox.Show("poredjenje "+jb.ToString()+" i "+(jb+1));
                     if (Convert.ToInt32(array[jb].Text) < Convert.ToInt32(array[jb - 1].Text))
                     {
                         array[jb].BackColor = Color.Green;
@@ -588,10 +531,6 @@
                         jb = ib + 1;
                         return;
                     }
-                    //array[jb].BackColor = Color.Blue;
-                    //array[jb - 1].BackColor = Color.Blue;
-
-                    //MessageBox.Show(jb.ToString());
 
                 }
                 else
@@ -629,10 +568,7 @@
             {
                 if (!pauzirano) trenutniTimer.Start();
                 proba.Stop();
-                //MessageBox.Show(array[trenutni].Top.ToString());
             }
-            
-            //MessageBox.Show("PROBAAAAA");
         }
         
 
@@ -641,7 +577,6 @@
             InitializeComponent();
             kreirajNiz();
 
-            //niz a=new niz(niz,this);
             
             this.proba = new System.Windows.Forms.Timer(this.components);
             this.proba.Tick += new System.EventHandler(this.proba_Tick);
@@ -649,8 +584,6 @@
             trenutniTimer = timerBubbleSort;
             ButtonTrenutni = ButtonBubbleSort;
 
-            /*textBoxUnosNiza.AutoSize = false;
-            textBoxUnosNiza.Height = 41;*/
         }
 
         private void kreirajNiz()
@@ -664,7 +597,6 @@
             for (int i = 0; i < niz.Length; i++)
             {
                 array[i] = new Label();
-                //array[i].AutoSize = true;
                 array[i].Text = niz[i].ToString();
                 int d = (850-(60 * niz.Length + 20 * (niz.Length - 1)))/2;
                 array[i].Location = new Point(d + 80 * i, 180);
@@ -693,11 +625,8 @@
                 array[i1].BackColor = Color.Blue;
                 array[i2].BackColor = Color.Blue;
                 if(!pauzirano) trenutniTimer.Start();
-                
                 timerSwap.Stop();
-                
             }
-
         }
     }
 }
